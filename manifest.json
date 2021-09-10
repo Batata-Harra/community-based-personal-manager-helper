@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "My New Tab Extension",
+  "version": "0.1",
+  "description": "For now it gonna be a unique clock new tab with a clock per hour and timeline",
+  "author": "Batata Harra",
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "https://api.hackernoon.com/",
+    "https://raw.githubusercontent.com/kevinabouhanna"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "128": "icon128.png"
+  }
+}
