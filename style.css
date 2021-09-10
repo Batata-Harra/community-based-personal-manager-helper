@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+:root {
+    --background-color: #2b2b2b;
+    --color: #e3d8c2;
+    --accent: #bf8348;
+    --accent-light: #feb522;
+    --accent-bg: #bb7c6a40;
+    --focus: #e9a9a4;
+    --font: 1.2rem/1.53 'Luckiest Guy', cursive;
+    --secondary-font: 100% system-ui, sans-serif;
+}
+
+html {
+    --thumbBG: #bfbfbf;
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--accent-bg);
+}
+
+:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+
+body {
+    margin: 0;
+    font: var(--font);
+    font-feature-settings: 'case', 'calt', 'tnum', 'ss01', 'zero';
+    text-rendering: optimizeLegibility;
+    background: var(--background-color);
+    color: var(--color);
+    scrollbar-color: var(--thumbBG);
+}
+
+/* show focus only when user is tabbing, you can find it's relevant JS code in main.js*/
+body:not(.user-is-tabbing) a:focus,
+body:not(.user-is-tabbing) button:focus {
+    outline: none;
+}
+
+/* custom scrollbar */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 50px;
+    border: 3px solid transparent;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #8e8e8e;
+}
+
 /*** CSS Reset start ***/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     border: 0;
@@ -34,3 +97,20 @@ table {
 }
 
 /*** CSS Reset end ***/
+
+.clocks {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-gap: 24px;
+}
+
+.clocks .clock {
+    display: grid;
+    grid-gap: 16px;
+}
+
+.clocks .clock h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
