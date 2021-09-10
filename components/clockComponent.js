@@ -2,52 +2,55 @@ const template = document.createElement("template");
 
 template.innerHTML = `
 <style>
-
+.clock-container {
+    display: grid;
+    grid-gap: 24px;
+}
 .clock {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    background-color: antiquewhite;
+    background-color: var(--accent-light);
     margin: auto;
     position: relative;
-    border:20px solid cornsilk;
+    border: 14px solid var(--color);
     display: inline-block;
 }
 
 .center {
     background-color: #000;
     position: absolute;
-    left: calc(50% - 10px);
-    top:  calc(50% - 10px);
-    width: 20px;
-    height: 20px;
+    left: calc(50% - 8px);
+    top:  calc(50% - 8px);
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     z-index: 20;
 }
 
 .hourHand {
-    width: 10px;
-    height: 75px;
+    width: 7px;
+    height: 50px;
     background-color: #000;
     transform-origin: bottom center;
     border-radius: 4px;
     position: absolute;
-    top: 75px;
-    left: 145px;
+    top: 50px;
+    left: 97px;
     z-index: 10;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     transform: rotate(360deg);
 }
 
 .minuteHand{
-    width: 5px;
-    height: 120px;
+    width: 3px;
+    height: 80px;
     background-color: #000;
     transform-origin: bottom center;
     border-radius: 4px;
     position: absolute;
-    top: 30px;
-    left: 147px;
+    top: 20px;
+    left: 98px;
     z-index: 9;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
       transform: rotate(90deg);
@@ -55,33 +58,33 @@ template.innerHTML = `
 }
 
 .secondHand{
-    width: 2px;
-    height: 120px;
+    width: 1px;
+    height: 80px;
     background-color:red;
     transform-origin: bottom center;
     border-radius: 4px;
     position: absolute;
-    top: 30px;
-    left: 149px;
+    top: 20px;
+    left: 100px;
     transition: all 0.06s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     z-index: 8;
       transform: rotate(360deg);
 
 }
-
-.time{
-    position: absolute;
-    top: 45%;
-    left: 10%;
+.time-container {
+    display: grid;
+}
+.time {
     border: 1px solid #fff8dc;
-    background-color: #fff;
+    background-color: var(--background-color);
     padding: 5px;
-    display: block;
-    box-shadow: inset 0px 2px 5px rgba(0,0,0,.4);
+    display: inline-block;
+    margin: auto;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,.4);
     border-radius: 5px;
-    min-width: 70px;
-    height: 15px;
+    min-width: 47px;
+    height: 10px;
 
 }
 .time small{
@@ -98,11 +101,11 @@ template.innerHTML = `
 
 .clock ul li{
     position: absolute;
-    width:20px;
-    height:20px;
+    width:14px;
+    height:14px;
     text-align: center;
-    line-height: 20px;
-    font-size: 10px;
+    line-height: 14px;
+    font-size: 7px;
     color:red;
 }
 
@@ -118,9 +121,9 @@ template.innerHTML = `
 
 .clock ul li:nth-child(3){
     right: 1%;
-    top:calc(50% - 10px);
+    top:calc(50% - 7px);
     color:#000;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -135,10 +138,10 @@ template.innerHTML = `
 }
 
 .clock ul li:nth-child(6){
-    right: calc(50% - 10px);
-    top:calc(99% - 20px);
+    right: calc(50% - 7px);
+    top:calc(99% - 14px);
     color:#000;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -153,9 +156,9 @@ template.innerHTML = `
 }
 .clock ul li:nth-child(9){
     left: 1%;
-    top:calc(50% - 10px);
+    top:calc(50% - 7px);
     color:#000;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
 }
 .clock ul li:nth-child(10){
@@ -169,20 +172,20 @@ template.innerHTML = `
 }
 
 .clock ul li:nth-child(12){
-    right: calc(50% - 10px);
+    right: calc(50% - 7px);
     top:1%;
-    color:#000;
-    font-size: 20px;
+    color: #000;
+    font-size: 14px;
     font-weight: bold;
 }
 
 </style>
-<div class="clock">
+<div class="clock-container">
+  <div class="clock">
     <div class="hourHand"></div>
     <div class="minuteHand"></div>
     <div class="secondHand"></div>
     <div class="center"></div>
-    <div class="time"></div>
     <ul>
       <li><span>1</span></li>
       <li><span>2</span></li>
@@ -197,8 +200,11 @@ template.innerHTML = `
       <li><span>11</span></li>
       <li><span>12</span></li>
     </ul>
+  </div>
+  <div class="time-container">
+      <div class="time"></div>
+  </div>
 </div>
-
 <audio src="/click-audio.mp3" class="audio"   ></audio>
 `;
 
@@ -213,30 +219,41 @@ class ClockItem extends HTMLElement {
     const secondHand = this.shadowRoot.querySelector('.secondHand');
     const time = this.shadowRoot.querySelector('.time');
     const clock = this.shadowRoot.querySelector('.clock');
-    const audio = this.shadowRoot.querySelector('.audio');
+    const audio = this.shadowRoot.querySelector('.audio')
+    const timeZone = this.getAttribute('timezone')
+    function setDate() {
+      const today = new Date()
+      const formatter = new Intl.DateTimeFormat([], {
+        timeZone: timeZone,
+        hour12: false,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+      })
+      const timeString = formatter.format(today)
+      // Get second from string "HH:MM:SS"
+      const second = timeString.slice(6, 8)
+      const secondDeg = ((second / 60) * 360) + 360
+      secondHand.style.transform = `rotate(${secondDeg}deg)`
   
-    function setDate(){
-      const today = new Date();
-    
-      const second = today.getSeconds();
-      const secondDeg = ((second / 60) * 360) + 360;
-      secondHand.style.transform = `rotate(${secondDeg}deg)`;
-    
-      // audio.play();
-    
-      const minute = today.getMinutes();
-      const minuteDeg = ((minute / 60) * 360);
-      minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
-    
-      const hour = today.getHours();
-      const hourDeg = ((hour / 12 ) * 360 );
-      hourHand.style.transform = `rotate(${hourDeg}deg)`;
-    
-      if(minute === 0 && second === 0) {
-        audio.play();
+      // Get minute from string "HH:MM:SS"
+      const minute = timeString.slice(3, 5)
+      const minuteDeg = ((minute / 60) * 360)
+      minuteHand.style.transform = `rotate(${minuteDeg}deg)`
+  
+      // Get hour from string "HH:MM:SS"
+      const hour = timeString.slice(0, 2)
+      const hourDeg = ((hour / 12) * 360)
+      hourHand.style.transform = `rotate(${hourDeg}deg)`
+  
+      console.log({
+        hour, minute, time, timeString,
+      })
+      if (minute === 0 && second === 0) {
+        audio.play()
       }
-      time.innerHTML = '<span>' + '<strong>' + hour + '</strong>' + ' : ' + minute + ' : ' + '<small>' + second +'</small>'+ '</span>';
-    
+      time.innerHTML = '<span>' + '<strong>' + hour + '</strong>' + ' : ' + minute + ' : ' + '<small>' + second + '</small>' + '</span>'
+  
     }
   
     setInterval(setDate, 1000);
