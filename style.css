@@ -76,7 +76,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-    line-height: 1
+    line-height: 1;
+    margin: 2%;
 }
 
 ol, ul {
@@ -113,4 +114,8 @@ table {
     text-align: center;
     font-size: 32px;
     font-weight: bold;
+}
+.working-timelines {
+    margin-top: 16px;
+    margin-bottom: 16px;
 }

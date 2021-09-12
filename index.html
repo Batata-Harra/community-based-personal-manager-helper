@@ -7,6 +7,7 @@
 
     <!-- components -->
     <script src="components/clockComponent.js" type="text/javascript" defer></script>
+    <script src="components/workingTimelinesComponent.js" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -21,6 +22,9 @@
         <clock-item timezone="America/Chicago"></clock-item>
     </div>
 </div>
-<div id="stories"></div>
+<div class="working-timelines">
+<working-timelines timezones="Beirut => Asia/Beirut, Modern Tribe => America/Chicago" working-time-start="17" working-time-end="0"></working-timelines>
+
+</div>
 </body>
 </html>
