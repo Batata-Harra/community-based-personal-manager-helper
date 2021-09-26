@@ -1,13 +1,12 @@
 class ClockItem extends HTMLElement {
   connectedCallback () {
-    const template = this.#getTemplate()
+    const template = ClockItem.#getTemplate()
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
     
     const hourHand = this.shadowRoot.querySelector('.hourHand')
     const minuteHand = this.shadowRoot.querySelector('.minuteHand')
     const time = this.shadowRoot.querySelector('.time')
-    const clock = this.shadowRoot.querySelector('.clock')
     const audio = this.shadowRoot.querySelector('.audio')
     const timeZone = this.getAttribute('timezone')
     
@@ -22,12 +21,12 @@ class ClockItem extends HTMLElement {
       const timeString = formatter.format(today)
       
       // Get minute from string "HH:MM:SS"
-      const minute = timeString.slice(3, 5)
+      const minute = parseInt(timeString.slice(3, 5))
       const minuteDeg = ((minute / 60) * 360)
       minuteHand.style.transform = `rotate(${minuteDeg}deg)`
       
       // Get hour from string "HH:MM:SS"
-      const hour = timeString.slice(0, 2)
+      const hour = parseInt(timeString.slice(0, 2))
       const hourDeg = ((hour / 12) * 360)
       hourHand.style.transform = `rotate(${hourDeg}deg)`
       
@@ -37,17 +36,19 @@ class ClockItem extends HTMLElement {
       if (minute === 0 && hour === 0) {
         audio.play()
       }
-      time.innerHTML = '<span>' + '<strong>' + hour + '</strong>' + ' : ' + minute + '</span>'
+      time.innerHTML = '<span>' + '<strong>' + (hour % 12 < 10 ? '0'+ (hour % 12) : hour % 12 ) + '</strong>' + ' : ' + ( minute < 10 ? '0'+ minute : minute ) + ' '+ (hour < 12 ? 'am' : 'pm') + '</span>'
     }
-    
+  
     setDate()
     setInterval(setDate, 1000 * 60) // milliseconds * seconds * minutes *  .... * .....
-    
+  
   }
-  #getStyle () {
+  static #getStyle () {
     return (
       `
       <style>
+        
+        
         .clock-container {
             display: grid;
             grid-gap: 24px;
@@ -59,7 +60,7 @@ class ClockItem extends HTMLElement {
             background-color: var(--accent-light);
             margin: auto;
             position: relative;
-            border: 14px solid var(--color);
+            border: 12px solid var(--color);
             display: inline-block;
         }
         
@@ -68,21 +69,21 @@ class ClockItem extends HTMLElement {
             position: absolute;
             left: calc(50% - 8px);
             top:  calc(50% - 8px);
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             z-index: 20;
         }
         
         .hourHand {
-            width: 7px;
+            width: 8px;
             height: 50px;
             background-color: #000;
             transform-origin: bottom center;
             border-radius: 4px;
             position: absolute;
             top: 50px;
-            left: 97px;
+            left: 98px;
             z-index: 10;
             transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
             transform: rotate(360deg);
@@ -99,44 +100,21 @@ class ClockItem extends HTMLElement {
             left: 98px;
             z-index: 9;
             transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-              transform: rotate(90deg);
-        
+            transform: rotate(90deg);
         }
         
-        .secondHand{
-            width: 1px;
-            height: 80px;
-            background-color:red;
-            transform-origin: bottom center;
-            border-radius: 4px;
-            position: absolute;
-            top: 20px;
-            left: 100px;
-            transition: all 0.06s;
-            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-            z-index: 8;
-              transform: rotate(360deg);
-        
-        }
         .time-container {
             display: grid;
         }
         .time {
             border: 1px solid #fff8dc;
             background-color: var(--background-color);
-            padding: 5px;
+            padding: 8px;
             display: inline-block;
             margin: auto;
             box-shadow: inset 0 2px 5px rgba(0,0,0,.4);
             border-radius: 5px;
-            min-width: 47px;
-            height: 10px;
-        
-        }
-        .time small{
-            color:red;
-            transition: all 0.05s;
-            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+            font-size: 32px;
         }
         
         .clock ul{
@@ -149,7 +127,7 @@ class ClockItem extends HTMLElement {
             width:14px;
             height:14px;
             text-align: center;
-            line-height: 14px;
+            line-height: 12px;
             font-size: 11px;
             color:red;
         }
@@ -227,17 +205,16 @@ class ClockItem extends HTMLElement {
       `
     )
   }
-  #getTemplate () {
+  static #getTemplate () {
     const template = document.createElement('template')
     
     template.innerHTML = (
       `
-        ${this.#getStyle()}
+        ${ClockItem.#getStyle()}
         <div class="clock-container">
           <div class="clock">
             <div class="hourHand"></div>
             <div class="minuteHand"></div>
-            <div class="secondHand"></div>
             <div class="center"></div>
             <ul>
               <li><span>1</span></li>

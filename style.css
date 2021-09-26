@@ -14,6 +14,7 @@
 html {
     --thumbBG: #bfbfbf;
     scroll-behavior: smooth;
+    min-width: 780px;
 }
 
 ::selection {
@@ -101,7 +102,7 @@ table {
 
 .clocks {
     display: inline-grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 24px;
 }
 

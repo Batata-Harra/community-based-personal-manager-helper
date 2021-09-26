@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fb72d40f-0b53-4b87-a5cb-65b693fc823f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/clockComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/clockComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/workingTimelinesComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/workingTimelinesComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1xv9fUOe559ybpadbPUKohavTHP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb72d40f-0b53-4b87-a5cb-65b693fc823f" name="Default Changelist" comment="" />
+      <created>1631224800261</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631224800261</updated>
+      <workItem from="1631224803060" duration="809000" />
+      <workItem from="1631258418724" duration="9692000" />
+      <workItem from="1631364057108" duration="254000" />
+      <workItem from="1631378212499" duration="1351000" />
+      <workItem from="1631439628778" duration="10542000" />
+      <workItem from="1631634589631" duration="1453000" />
+      <workItem from="1632410666967" duration="386000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit having a clock working with a funny sound">
+      <created>1631262448831</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631262448831</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Adding Batata Harra branding">
+      <created>1631276212872</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631276212872</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changing the Clock Component">
+      <created>1631276304134</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631276304134</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changing the interface of the new tab">
+      <created>1631276325544</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631276325544</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adding 2 new ToDo">
+      <created>1631277173457</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631277173457</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Adding a margin to the body">
+      <created>1631445054806</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631445054806</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adding a working time component">
+      <created>1631445331408</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631445331408</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit having a clock working with a funny sound" />
+    <MESSAGE value="Adding Batata Harra branding" />
+    <MESSAGE value="Changing the Clock Component" />
+    <MESSAGE value="Changing the interface of the new tab" />
+    <MESSAGE value="adding 2 new ToDo" />
+    <MESSAGE value="Adding a margin to the body" />
+    <MESSAGE value="Adding a working time component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding a working time component" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="704" y="345" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1631225563019">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="704" y="345" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/116.1080.1680.1050@0.0.1920.1080" timestamp="1631225563019" />
+    <state x="560" y="261" key="Vcs.Push.Dialog.v2" timestamp="1631445332998">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="560" y="261" key="Vcs.Push.Dialog.v2/0.0.1920.1080/116.1080.1680.1050@0.0.1920.1080" timestamp="1631445332998" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/clockComponent.js</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

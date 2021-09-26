@@ -18,12 +18,17 @@ class WorkingTimelines extends HTMLElement {
         }
         .timeline__item {
             display: grid;
-            grid-template-columns: 250px 1fr;
-            grid-gap: 16px;
+            grid-template-columns: 1fr;
+            grid-gap: 8px;
         }
         .timeline__label {
             padding: 16px;
             background: var(--accent-bg);
+            
+
+        }
+        .timeline__label h2 {
+            margin: 0;
         }
         .timeline__hours {
             display: grid;
@@ -34,10 +39,26 @@ class WorkingTimelines extends HTMLElement {
         .timeline__hours > div {
             background: var(--accent-bg);
             color: var(--focus);
-            font-size: 32px;
+            font-size: 24px;
             font-weight: 600;
             display: grid;
             align-items: center;
+            padding: 8px;
+        }
+        
+        @media all and (min-width: 801px){
+            .timeline__item {
+                grid-template-columns: 250px 1fr;
+                grid-gap: 16px;
+            }
+            .timeline__label {
+                padding: 16px;
+                background: var(--accent-bg);
+            }
+            
+            .timeline__hours > div {
+                font-size: 32px;
+            }
         }
         </style>
       `
